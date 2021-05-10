@@ -13,13 +13,13 @@
 
     <script>
         jQuery(function($) {
-            $("#rss-feeds").rss("http://www.pinterest.com/12025xmen/feed.rss", {
+            $("#rss-feeds").rss("https://www.pinterest.com/12025xmen/feed.rss", {
                 limit: 10000,
                 layoutTemplate: "<div class='feed-container'>{entries}</div>",
                 // entryTemplate: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{teaserImage}{shortBodyPlain}</li>'
                 // entryTemplate: '<div class="pin">[{shortBodyPlain}{date}]</div>'
                 entryTemplate: `
-                <div class="pin" style="--bgc: black">
+                <div class="pin" style="background-image: url({teaserImageUrl})">
                     <div class="img"><img src="{teaserImageUrl}"></div>
                     <div class="text">
                         <div class="left">
@@ -30,8 +30,18 @@
                     </div>
                 </div>
                 `
-            })
-        })
+            });
+        });
+        setTimeout(() => {
+                var replaced = $("body").html().replace(/236x/g, '564x');
+                $("body").html(replaced);
+            },
+            2000);
+
+        // window.onload = function() {
+        //     var replaced = $("body").html().replace(/236x/g, '564x');
+        //     $("body").html(replaced);
+        // };
     </script>
 </head>
 
