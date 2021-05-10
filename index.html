@@ -3,7 +3,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <title>jquery.rss example</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
@@ -13,8 +12,7 @@
 
     <script>
         jQuery(function($) {
-            console.log("rss content is loading...");
-            $("#rss-feeds").rss("https://www.pinterest.com/12025xmen/design.rss", {
+            $("#rss-feeds").rss("http://www.pinterest.com/12025xmen/feed.rss", {
                 limit: 10000,
                 layoutTemplate: "<div class='feed-container'>{entries}</div>",
                 // entryTemplate: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{teaserImage}{shortBodyPlain}</li>'
