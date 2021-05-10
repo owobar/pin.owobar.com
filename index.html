@@ -12,6 +12,7 @@
 
     <script>
         jQuery(function($) {
+            console.log("rss content is loading...");
             $("#rss-feeds").rss("https://www.pinterest.com/12025xmen/design.rss", {
                 limit: 10000,
                 layoutTemplate: "<div class='feed-container'>{entries}</div>",
