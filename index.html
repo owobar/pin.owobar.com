@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jquery.rss example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="jquery.rss.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        jQuery(function($) {
+            $("#rss-feeds").rss("https://www.pinterest.com/12025xmen/feed.rss", {
+                limit: 10000,
+                layoutTemplate: "<div class='feed-container'>{entries}</div>",
+                // entryTemplate: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{teaserImage}{shortBodyPlain}</li>'
+                // entryTemplate: '<div class="pin">[{shortBodyPlain}{date}]</div>'
+                entryTemplate: `
+                <div class="pin" style="--bgc: black">
+                    <div class="img"><img src="{teaserImageUrl}"></div>
+                    <div class="text">
+                        <div class="left">
+                            <a href="{url}" class="link">原始影像 ...</a>
+                            <div class="date">{date}</div>
+                        </div>
+                        <div class="title">{shortBodyPlain}</div>
+                    </div>
+                </div>
+                `
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="rss-feeds"></div>
+    <div class="rss-body">
+
+    </div>
+</body>
+
+</html>

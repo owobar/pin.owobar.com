@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+body,
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.pin {
+  width: 100%;
+  background-color: var(--bgc);
+  position: relative;
+}
+
+.pin .img {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 12vh 0;
+}
+
+.pin .img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.pin .text {
+  width: 100%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 12vh 10vw;
+  color: white;
+}
+
+@media screen and (min-width: 1500px) {
+  .pin .text {
+    margin-top: -300px;
+  }
+}
+
+.pin .text .title {
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 110%;
+  width: 400px;
+  text-align: right;
+}
+
+.pin .text .left {
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 43px;
+}
+
+.pin .text .left .link {
+  color: white;
+  font-size: 18px;
+}
+/*# sourceMappingURL=style.css.map */
